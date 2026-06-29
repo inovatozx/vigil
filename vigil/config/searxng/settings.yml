@@ -1,0 +1,93 @@
+# SearXNG settings for Vigil AI Workspace
+
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  base_url: http://localhost:8080/
+  image_proxy: true
+  static_use_hash: false
+  secret_key: "secret-key-searxng-vigil"
+
+ui:
+  static_path: ""
+  templates_path: ""
+  default_theme: "simple"
+  default_locale: "pt_BR"
+
+search:
+  autocomplete: "duckduckgo"
+  autocomplete_min: 4
+  default_lang: "pt_BR"
+
+redis:
+  url: false
+
+outgoing:
+  request_timeout: 3.0
+  max_request_timeout: 10.0
+  pool_connections: 100
+  pool_maxsize: 10
+
+engines:
+  - name: google
+    engine: google
+    shortcut: go
+    disabled: false
+
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+    disabled: false
+
+  - name: bing
+    engine: bing
+    shortcut: bi
+    disabled: false
+
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
+    disabled: false
+
+  - name: wikidata
+    engine: wikidata
+    shortcut: wd
+    disabled: false
+
+  - name: github
+    engine: github
+    shortcut: gh
+    disabled: false
+
+  - name: arxiv
+    engine: arxiv
+    shortcut: arx
+    disabled: false
+
+  - name: youtube
+    engine: youtube
+    shortcut: yt
+    disabled: false
+
+  - name: duckduckgo images
+    engine: duckduckgo
+    shortcut: ddi
+    image_search: true
+    disabled: false
+
+  - name: google images
+    engine: google
+    shortcut: goi
+    image_search: true
+    disabled: false
+
+categories:
+  general: []
+  images: []
+  videos: []
+  news: []
+  map: []
+  music: []
+  it: []
+  science: []
+  social media: []

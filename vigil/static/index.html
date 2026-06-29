@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigil AI Workspace</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="theme-color" content="#1a1a1a">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Vigil</h1>
+                <button id="toggleSidebar" class="toggle-sidebar-btn">☰</button>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-view="chat">💬 Chat</button>
+                <button class="nav-btn" data-view="sessions">📚 Sessões</button>
+                <button class="nav-btn" data-view="models">🤖 Modelos</button>
+                <button class="nav-btn" data-view="settings">⚙️ Configurações</button>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">Sair</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Chat View -->
+            <div id="chatView" class="view active">
+                <div class="chat-container">
+                    <div id="messagesContainer" class="messages-container"></div>
+                    <div class="chat-input-area">
+                        <textarea id="chatInput" placeholder="Digite sua mensagem..." rows="3"></textarea>
+                        <div class="chat-controls">
+                            <select id="modelSelect" class="model-select">
+                                <option value="">Carregando modelos...</option>
+                            </select>
+                            <button id="sendBtn" class="send-btn">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sessions View -->
+            <div id="sessionsView" class="view">
+                <div class="sessions-container">
+                    <button id="newSessionBtn" class="new-session-btn">+ Nova Sessão</button>
+                    <div id="sessionsList" class="sessions-list"></div>
+                </div>
+            </div>
+
+            <!-- Models View -->
+            <div id="modelsView" class="view">
+                <div class="models-container">
+                    <div id="modelsList" class="models-list"></div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settingsView" class="view">
+                <div class="settings-container">
+                    <h2>Configurações</h2>
+                    <div class="settings-group">
+                        <label for="themeSelect">Tema:</label>
+                        <select id="themeSelect">
+                            <option value="dark">Escuro</option>
+                            <option value="light">Claro</option>
+                        </select>
+                    </div>
+                    <div class="settings-group">
+                        <label for="languageSelect">Idioma:</label>
+                        <select id="languageSelect">
+                            <option value="pt-BR">Português (Brasil)</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Vigil AI Workspace</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <p id="toggleRegister" class="toggle-auth">Não tem conta? Registre-se</p>
+            </form>
+            <form id="registerForm" style="display: none;">
+                <input type="text" id="regUsername" placeholder="Usuário" required>
+                <input type="password" id="regPassword" placeholder="Senha" required>
+                <input type="password" id="regPasswordConfirm" placeholder="Confirmar Senha" required>
+                <button type="submit">Registrar</button>
+                <p id="toggleLogin" class="toggle-auth">Já tem conta? Faça login</p>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/static/app.js"></script>
+</body>
+</html>
