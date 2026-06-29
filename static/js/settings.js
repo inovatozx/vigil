@@ -21,7 +21,7 @@ export function setupSettings(app) {
         localStorage.setItem('language', language);
         // In a real app, this would reload translations
         console.log('Language changed to:', language);
-    });
+    })
 
     function applyTheme(theme) {
         if (theme === 'light') {
